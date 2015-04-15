@@ -7,7 +7,7 @@ class Category(models.Model):
     likes = models.IntegerField(default=0)
 
     class Meta:
-    	verbose_name_plural = 'categories'
+        verbose_name_plural = 'categories'
 
     def __unicode__(self):
         return self.name
