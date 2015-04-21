@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+    <body>
+        <h1>Login to Rango</h1>
+
+        <form id="login_form" method="post" action="/rango/login/">
+            {% if bad_details %}
+                <p><strong>Your username and/or password were incorrect!</strong></p>
+            {% elif disabled_account %}
+                <p><strong>Your Rango account is currently disabled; we can't log you in!</strong></p>
+            {% endif %}
+
+            {% csrf_token %}
+
+            Username: <input type="text" name="username" value="" size="50" />
+            <br />
+            Password: <input type="password" name="password" value="" size="50" />
+            <br />
+
+            <input type="submit" value="submit" />
+        </form>
+    </body>
+</html>
